@@ -4,15 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jtopjian/limbo/lib"
 	"github.com/urfave/cli"
 )
-
-var lxdConfig lib.LXDConfig
-
-func init() {
-	lxdConfig = lib.LXDConfig{}
-}
 
 func main() {
 	app := cli.NewApp()
