@@ -7,6 +7,10 @@ backends.
 
 * OpenStack Swift
 
+## Installation
+
+Download the latest [release](https://github.com/jtopjian/limbo/releases).
+
 ## Usage
 
 ### Export
@@ -31,12 +35,6 @@ To specify a custom storage container name, do:
 
 ```shell
 $ limbo export swift --name foo --stop --create-storage-container --storage-container backups
-```
-
-To take advantage of Swift Object Versioning/Archiving, do:
-
-```shell
-$ limbo export swift --name foo --stop --create-storage-container --storage-container backups --archive
 ```
 
 If you already have an image, do:
@@ -80,10 +78,27 @@ To decrypt a previously encrypted image, do:
 $ limbo import swift --object-name foo --encrypt --pass "some passphrase"
 ```
 
+## OpenStack Swift
+
+You can use a standard `openrc` file to authenticate with Swift:
+
+```shell
+$ source openrc
+$ limbo export swift ...
+```
+
+To take advantage of Swift Object Versioning/Archiving, do:
+
+```shell
+$ limbo export swift --name foo --stop --create-storage-container --storage-container backups --archive
+```
+
 ## Contributing
 
-Any type of contribution is welcomed: documentation, bug reports, bug fixes,
-and features.
+Any type of contribution is welcomed: documentation, bug reports, and bug 
+fixes. Feature requests and feature contributions are also welcomed, but
+they first must be discussed and approved. Please open an Issue to first
+discuss.
 
 ## Development
 
